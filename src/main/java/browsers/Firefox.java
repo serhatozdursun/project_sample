@@ -18,16 +18,18 @@ public class Firefox implements BrowserSelectable {
     public MutableCapabilities getCapabilities() {
         FirefoxOptions options = new FirefoxOptions();
         BrowserStackCap stackCap = new BrowserStackCap();
-        options = (FirefoxOptions) stackCap.getBrowserStackCaps(options,FIREFOX);
-        HashMap prefs = new HashMap<String, Object>();
+        System.out.println("firefox");
+        HashMap<String, Object> prefs = new HashMap<>();
         prefs.put("profile.default_content_setting_values.notifications", 2);
 
         options.addArguments("--kiosk");
         options.addArguments("--disable-notifications");
         options.addArguments("--start-fullscreen");
+        options.merge(stackCap.getBrowserStackCaps(options, FIREFOX));
         return options;
     }
-//burda neden buildli startli kullandik ??? porttan calistirmak istedigimiz icin mi
+
+    //burda neden buildli startli kullandik ??? porttan calistirmak istedigimiz icin mi
     @Override
     public RemoteWebDriver getBrowser() {
         try {

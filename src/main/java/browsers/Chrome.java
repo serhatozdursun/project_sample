@@ -21,22 +21,20 @@ public class Chrome implements BrowserSelectable {
     public MutableCapabilities getCapabilities() {
         ChromeOptions options = new ChromeOptions();
         BrowserStackCap stackCap = new BrowserStackCap();
-        options = (ChromeOptions) stackCap.getBrowserStackCaps(options,CHROME);
-        HashMap prefs = new HashMap<String, Object>();
+        HashMap<String, Object> prefs = new HashMap<>();
         prefs.put("profile.default_content_setting_values.notifications", 2);
         options.addArguments("--kiosk");
         options.addArguments("--log-level=3");
         options.addArguments("--disable-notifications");
         options.addArguments("--start-fullscreen");
         options.addArguments("--disable-logging");
-
+        options.merge(stackCap.getBrowserStackCaps(options,CHROME));
         return options;
     }
 
     @Override
     public RemoteWebDriver getBrowser() {
         try {
-            System.out.println(Browserstack.URL.getValue());
             URL url = new URL(Browserstack.URL.getValue());
             return new RemoteWebDriver(url, getCapabilities());
         } catch (MalformedURLException e) {

@@ -2,10 +2,10 @@ package enums;
 
 public enum Browsers {
     CHROME("Chrome"),
-    FIREFOX("firefox"),
-    OPERA("opera"),
-    SAFARI("safari"),
-    EDGE("edge");
+    FIREFOX("Firefox"),
+    OPERA("Opera"),
+    SAFARI("Safari"),
+    EDGE("Edge");
     private final String browser;
 
     Browsers(String browser) {

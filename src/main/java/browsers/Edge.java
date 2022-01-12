@@ -21,15 +21,6 @@ public class Edge implements BrowserSelectable {
         EdgeOptions options = new EdgeOptions();
         BrowserStackCap stackCap = new BrowserStackCap();
         options = (EdgeOptions) stackCap.getBrowserStackCaps(options,EDGE);
-        HashMap prefs = new HashMap<String, Object>();
-
-        prefs.put("profile.default_content_setting_values.notifications", 2);
-        options.addArguments("--kiosk");
-        options.addArguments("--log-level=3");
-        options.addArguments("--disable-notifications");
-        options.addArguments("--start-fullscreen");
-        options.addArguments("--disable-logging");
-        prefs.put("profile.default_content_setting_values.notifications", 2);
         return options;
     }
 
