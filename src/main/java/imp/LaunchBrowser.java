@@ -26,6 +26,7 @@ public class LaunchBrowser {
         BaseBrowser base = new BaseBrowser();
         base.setUp();
         DriverManager.getInstances().getDriver().get(url);
-        System.out.println(DriverManager.getInstances().getDriver().getCurrentUrl()+ " page loaded");
+        Gauge.captureScreenshot();
+        Gauge.writeMessage(DriverManager.getInstances().getDriver().getCurrentUrl()+ " page loaded");
     }
 }
