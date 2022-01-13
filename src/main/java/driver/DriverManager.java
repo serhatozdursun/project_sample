@@ -34,6 +34,7 @@ public class DriverManager {
             case EDGE:
                 browserSelectable = new Edge();
                 setDriver(browserSelectable.getBrowser());
+                getDriver().manage().window().maximize();
                 break;
             case FIREFOX:
                 browserSelectable = new Firefox();
@@ -68,6 +69,7 @@ public class DriverManager {
                 getDriver().quit();
             }
         } catch (NoSuchSessionException e) {
+            e.printStackTrace();
         }
     }
 }

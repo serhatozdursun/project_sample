@@ -18,13 +18,6 @@ Teast with Firefox
      |----------|-----------|-----------|-----------|
      |Firefox   |latest     |Windows    |10         |
 
-Teast with Firefox
-----------------
-* Open <url> with <geoLocation> with belowsetting
-     |Browser   | Version   |OS         |OS Version |
-     |----------|-----------|-----------|-----------|
-     |Firefox   |latest     |Windows    |10         |
-
 
 Teast with Edge
 ----------------

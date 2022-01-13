@@ -23,6 +23,8 @@ public class BrowserStackCap {
         options.setCapability("browserstack.local", "false");
         options.setCapability("browserstack.selenium_version","3.141.59");
         options.setCapability("browserstack.geoLocation",System.getProperty("geoLocation"));
+        options.setCapability(" browserstack.networkLogs",true);
+        options.setCapability("browserstack.networkLogs",true);
         return options;
     }
 }
