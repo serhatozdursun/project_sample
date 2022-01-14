@@ -5,8 +5,8 @@ import java.net.URL;
 
 public enum Browserstack {
 
-    USERNAME("browserstacktest_08OMFi"),
-    AUTOMATE_KEY("TVCMaxakNiqqzTnFpx54"),
+    USERNAME("USERNAME"),
+    AUTOMATE_KEY("AUTOMATE_KEY"),
     URL("https://" + USERNAME.value + ":" + AUTOMATE_KEY.value + "@hub-cloud.browserstack.com/wd/hub");
 
     private String value;
